@@ -7,5 +7,4 @@ README
 README.md
 dist.ini
 lib/OTRS/ForwardQueue.pm
-set-env.sh
 templates/notify_customer.tt.example

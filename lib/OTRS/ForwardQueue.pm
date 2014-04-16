@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has 'query' => (
   traits => ['Hash'],
@@ -237,7 +237,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-This document describes OTRS::ForwardQueue version 0.0.1.
+This document describes OTRS::ForwardQueue version 0.0.2.
 
 =head1 SYNOPSIS
 
@@ -269,11 +269,8 @@ This document describes OTRS::ForwardQueue version 0.0.1.
 =head1 DESCRIPTION
 
 This module queries the Open Technology Real Services (OTRS) ticket management
-system for ticketss matching the query provided and then forwards these
+system for tickets matching the query provided and then forwards these
 tickets to an email address, closing them in OTRS.
-
-The original motivation for writing this module was to re-assign tickets
-which were reported in the incorrect system.
 
 The following functions are provided:
 
@@ -331,7 +328,7 @@ Required list of options which affect how the queue is processed.
 
 =head1 DEPENDENCIES
 
-Perl version 5.14 or higher is required. You may be able to use the module in old versions of Perl, but this is neither tested nor supported.
+Perl version 5.14 or higher is required. You may be able to use the module with older versions of Perl, but this is neither tested nor supported.
 
 This module requires the following modules:
 
@@ -356,6 +353,24 @@ must be installed as this module will attempt to import all of them.
 
 You must also have the OTRS source installed and available via C<@INC>. This module has only
 been tested with OTRS 3.2.10.
+
+=head1 RUNNING AS A CRON JOB
+
+Running a script which uses this module as a cron job may require some additional tweaks.
+The easiest way is to create a small wrapper script to set the various library paths
+correctly, such as the one below:
+
+    #!/bin/bash
+    
+    # Set this to the absolute path to your OTRS install, so those modules
+    # can be loaded
+    FQ_OTRS_LIB="-I/path/to/otrs"
+    
+    # Comment out this line if you are not using local::lib
+    FQ_LOCAL_LIB="-I$HOME/perl5/lib/perl5"
+    
+    # Change this to the path of your script
+    /usr/bin/perl "$FQ_OTRS_LIB" "$FQ_LOCAL_LIB" /path/to/script.pl
 
 =head1 INCOMPATIBILITIES
 
