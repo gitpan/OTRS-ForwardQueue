@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has 'query' => (
   traits => ['Hash'],
@@ -229,7 +229,10 @@ sub process_queue
 __PACKAGE__->meta->make_immutable;
 
 1; # Magic true value required at end of module
-__END__
+
+=pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -237,7 +240,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-This document describes OTRS::ForwardQueue version 0.0.3.
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -364,8 +367,8 @@ correctly, such as the one below:
 
     #!/bin/bash
     
-    # Set this to the absolute path to your OTRS install, so those modules
-    # can be loaded
+    # Set this to the absolute path to your OTRS install, so those
+    # modules can be loaded
     FQ_OTRS_LIB="-I/path/to/otrs"
     
     # Comment out this line if you are not using local::lib
@@ -390,12 +393,17 @@ L<https://github.com/pwaring/otrs-forward-queue/issues>
 
 Paul Waring <paul.waring@manchester.ac.uk>
 
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2014, University of Manchester. All rights reserved.
+This software is Copyright (c) 2014 by University of Manchester.
 
-Licensed under the GNU Affero GPLv3.
+This is free software, licensed under:
+
+  The GNU Affero General Public License, Version 3, November 2007
+
+=cut
+
+__END__
+
+# ABSTRACT: Forwards the contents of an OTRS queue to a given email address.
+
