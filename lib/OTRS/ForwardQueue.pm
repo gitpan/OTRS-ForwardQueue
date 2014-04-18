@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 has 'query' => (
   traits => ['Hash'],
@@ -237,7 +237,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-This document describes OTRS::ForwardQueue version 0.0.2.
+This document describes OTRS::ForwardQueue version 0.0.3.
 
 =head1 SYNOPSIS
 
@@ -324,6 +324,10 @@ Required list of options which affect how the queue is processed.
 
 =back
 
+=item process_queue()
+
+Processes the queue based on the options passed in the constructor.
+
 =back
 
 =head1 DEPENDENCIES
@@ -333,8 +337,6 @@ Perl version 5.14 or higher is required. You may be able to use the module with 
 This module requires the following modules:
 
 =over 4
-
-=item * L<IO::Interactive> - Dependency of OTRS modules (not used by web frontend so may not be installed).
 
 =item * L<Moose>
 
