@@ -23,4 +23,6 @@ requires:
   perl: 5.014
   strict: 0
   warnings: 0
-version: 0.04
+resources:
+  bugtracker: http://github.com/pwaring/OTRS-ForwardQueue/issues
+version: 0.05

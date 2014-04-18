@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 has 'query' => (
   traits => ['Hash'],
@@ -240,7 +240,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -387,7 +387,7 @@ No bugs have been reported.
 
 Please report any bugs through the Github issue system:
 
-L<https://github.com/pwaring/otrs-forward-queue/issues>
+L<https://github.com/pwaring/OTRS-ForwardQueue/issues>
 
 =head1 AUTHOR
 
