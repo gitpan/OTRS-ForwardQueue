@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 has 'query' => (
   traits => ['Hash'],
@@ -39,7 +39,7 @@ has 'query' => (
 
 has 'options' => (
   traits => ['Hash'],
-  is => 'rw',
+  is => 'ro',
   isa => 'HashRef',
   required => 1,
   handles => {
@@ -240,7 +240,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

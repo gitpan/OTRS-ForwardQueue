@@ -1,10 +1,24 @@
 ==================================================
-Changes from 2013-04-18 00:00:00 +0000 to present.
+Changes from 2013-04-29 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.06 at 2014-04-18 19:06:45 +0000
+version 0.07 at 2014-04-29 20:34:38 +0000
 -----------------------------------------
+
+  Change: 91bad7d31c98c986dc1b22d2001df8ff1c4f625c
+  Author: Paul Waring <paul@xk7.net>
+  Date : 2014-04-29 21:34:14 +0000
+
+    Bump version to 0.07 
+
+  Change: cf25a6b975f380fcd6c889e0be160e439fa2d86c
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-04-24 10:48:40 +0000
+
+    Make options read-only
+
+    No need to change them after being supplied in constructor. 
 
   Change: 3f8a72ae22f80788602d26c03e41377be95d1bbe
   Author: Paul Waring <paul@xk7.net>
