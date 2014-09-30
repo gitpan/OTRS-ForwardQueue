@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.07';
+our $VERSION = '0.09';
 
 has 'query' => (
   traits => ['Hash'],
@@ -173,8 +173,15 @@ sub process_queue
         my $nc_vars = {
           ticket => \%ticket,
         };
+				
+				my $notify_template = 'notify_customer.tt';
+				
+				if ($self->exists('NotifyCustomerTemplate') && $self->defined_option('NotifyCustomerTemplate') && $self->get_option('NotifyCustomerTemplate'))
+				{
+					$notify_template = $self->get_option('NotifyCustomerTemplate');
+				}
         
-        $nc_tt->process('notify_customer.tt', $nc_vars, \$nc_output) || die $nc_tt->error() . "\n";
+        $nc_tt->process($notify_template, $nc_vars, \$nc_output) || die $nc_tt->error() . "\n";
         
         # Add a new article, which should be emailed automatically to the customer.
         # Remember that To/From are reversed here, since we are sending an email to
@@ -240,7 +247,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.07
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -356,8 +363,8 @@ This module requires the following modules:
 Although some of the above modules are used for optional features, all the dependencies
 must be installed as this module will attempt to import all of them.
 
-You must also have the OTRS source installed and available via C<@INC>. This module has only
-been tested with OTRS 3.2.10.
+You must also have the OTRS source installed and available via C<@INC>. This module has
+been tested with OTRS 3.2.10 and 3.3.9.
 
 =head1 RUNNING AS A CRON JOB
 
