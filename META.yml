@@ -25,4 +25,4 @@ requires:
   warnings: '0'
 resources:
   bugtracker: http://github.com/pwaring/OTRS-ForwardQueue/issues
-version: '0.09'
+version: '0.10'

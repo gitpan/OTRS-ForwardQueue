@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 has 'query' => (
   traits => ['Hash'],
@@ -176,7 +176,7 @@ sub process_queue
 				
 				my $notify_template = 'notify_customer.tt';
 				
-				if ($self->exists('NotifyCustomerTemplate') && $self->defined_option('NotifyCustomerTemplate') && $self->get_option('NotifyCustomerTemplate'))
+				if ($self->exists_option('NotifyCustomerTemplate') && $self->defined_option('NotifyCustomerTemplate') && $self->get_option('NotifyCustomerTemplate'))
 				{
 					$notify_template = $self->get_option('NotifyCustomerTemplate');
 				}
@@ -247,7 +247,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
