@@ -3,8 +3,20 @@ Changes from 2013-10-02 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.11 at 2014-10-02 09:39:50 +0000
+version 0.12 at 2014-10-02 10:14:51 +0000
 -----------------------------------------
+
+  Change: f1c6002cd1aaadf2ebcdb2a88bc390ef51672ba8
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-10-02 11:14:36 +0000
+
+    Bump version to 0.12 
+
+  Change: 6147179ad90d4dd6cb61939e48239c33c441b648
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-10-02 11:13:59 +0000
+
+    Update from address in OrigHeader 
 
   Change: 64d5c3e95307c5f1dd3c46810a9b296b2576a9f3
   Author: Paul Waring <paul.waring@manchester.ac.uk>

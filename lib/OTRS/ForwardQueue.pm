@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 has 'query' => (
   traits => ['Hash'],
@@ -208,7 +208,7 @@ sub process_queue
           UserID => $self->get_query('UserID'),
           AutoResponseType => 'auto reply',
           OrigHeader => {
-            From => $first_article{'ToRealname'},
+            From => $from_address,
             To => $first_article{'From'},
             Subject => 'Ticket forwarded: ' . $ticket{'Title'},
           },
@@ -254,7 +254,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
