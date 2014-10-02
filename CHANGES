@@ -1,10 +1,22 @@
 ==================================================
-Changes from 2013-10-01 00:00:00 +0000 to present.
+Changes from 2013-10-02 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.10 at 2014-10-01 08:55:58 +0000
+version 0.11 at 2014-10-02 09:39:50 +0000
 -----------------------------------------
+
+  Change: 64d5c3e95307c5f1dd3c46810a9b296b2576a9f3
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-10-02 10:39:33 +0000
+
+    Bump version to 0.11 
+
+  Change: 84ab7ec7d9c6e0daba1c17f4787456d41bf4d2e9
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-10-02 10:39:16 +0000
+
+    Configurable From address 
 
   Change: 4dc9ea5663932222d3499c99cd757f0182223149
   Author: Paul Waring <paul.waring@manchester.ac.uk>

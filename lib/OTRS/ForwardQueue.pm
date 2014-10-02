@@ -24,7 +24,7 @@ use Kernel::System::DB;
 use Kernel::System::Ticket;
 use Kernel::System::Ticket::Article;
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 has 'query' => (
   traits => ['Hash'],
@@ -182,6 +182,13 @@ sub process_queue
 				}
         
         $nc_tt->process($notify_template, $nc_vars, \$nc_output) || die $nc_tt->error() . "\n";
+				
+				my $from_address = $first_article{'ToRealname'};
+				
+				if ($self->exists_option('FromAddress') && $self->defined_option('FromAddress') && $self->get_option('FromAddress'))
+				{
+					$from_address = $self->get_option('FromAddress');
+				}
         
         # Add a new article, which should be emailed automatically to the customer.
         # Remember that To/From are reversed here, since we are sending an email to
@@ -190,7 +197,7 @@ sub process_queue
           TicketID => $ticket_id,
           ArticleType => 'email-external',
           SenderType => 'system',
-          From => $first_article{'ToRealname'},
+          From => $from_address,
           To => $first_article{'From'},
           Subject => 'Ticket forwarded: ' . $ticket{'Title'},
           Body => $nc_output,
@@ -247,7 +254,7 @@ OTRS::ForwardQueue - Forwards the contents of an OTRS queue to a given email add
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
