@@ -1,10 +1,24 @@
 ==================================================
-Changes from 2013-10-02 00:00:00 +0000 to present.
+Changes from 2013-11-03 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.12 at 2014-10-02 10:14:51 +0000
+version 0.13 at 2014-11-03 13:41:39 +0000
 -----------------------------------------
+
+  Change: ffa0a5415bd2d5c242c2f35c6badd5fd983174c2
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-11-03 13:40:39 +0000
+
+    Version 0.13 
+
+  Change: 0da1e8a14d71cab95ae2cbca69b1b8b49ca9fbce
+  Author: Paul Waring <paul.waring@manchester.ac.uk>
+  Date : 2014-11-03 13:39:29 +0000
+
+    Fix typo in example code
+
+    Thanks to Claas Hilbrecht for spotting this. 
 
   Change: f1c6002cd1aaadf2ebcdb2a88bc390ef51672ba8
   Author: Paul Waring <paul.waring@manchester.ac.uk>
